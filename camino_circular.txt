@@ -1,0 +1,75 @@
+def optimalPoint(magic, dist):
+    # Write your code here
+    i =0
+    value_mag = magic
+    value_dist = dist
+    value_road = 0
+    index_ini = 0
+    while i< len(dist):
+        j=0
+        opr = 0
+        while j < len (dist):
+            index = i+j
+            if index < len (dist): 
+               value_mag[j]= magic[index]
+               value_mag[j] = dist[index]
+            else:
+                value_mag[j] = magic [j-i]
+                value_mag[j] =dist[j-i]
+                
+            print (j)        
+            j += 1
+         
+        opr = value_mag[0]- value_dist [0]
+        if (opr>0):
+            opr = opr  +value_mag[1] 
+
+        elif (opr>0):
+            opr = opr - value_dist[1]  
+        elif (opr>0):
+            opr = opr +  value_mag[2] 
+        elif (opr>0):
+            opr = opr - value_dist[2]
+        elif (opr>0):
+            opr = opr + value_mag[3]     
+        elif (opr>0):
+            opr = opr  - value_dist[3]
+        elif (opr<=0):
+            value_road =0
+
+        if (opr >value_road):
+            value_road = opr
+            index_ini =  dist.index(value_dist [0])
+            
+        i += 1      
+    if value_road ==0:
+        index_ini =-1          
+    return index_ini
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    magic_count = int(input().strip())
+
+    magic = []
+
+    for _ in range(magic_count):
+        magic_item = int(input().strip())
+        magic.append(magic_item)
+
+    dist_count = int(input().strip())
+
+    dist = []
+
+    for _ in range(dist_count):
+        dist_item = int(input().strip())
+        dist.append(dist_item)
+
+    result = optimalPoint(magic, dist)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+

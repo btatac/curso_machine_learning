@@ -1,0 +1,14 @@
+>>> def a (cualquier): 
+...     """ Descripcion de lo que hace la fun
+...         cualquier int cualquier entero
+...         returns cualquier + 5 
+...     """
+...     return cualquier + 5
+... 
+>>> help(a)
+Help on function a in module __main__:                                                                                                                
+
+a(cualquier)
+    Descripcion de lo que hace la fun
+        cualquier int cualquier entero
+    returns cualquier + 5

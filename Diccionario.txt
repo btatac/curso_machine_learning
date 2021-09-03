@@ -1,0 +1,66 @@
+>>> my_dic  = {
+...     'David' : 35,
+...     'Erika' : 32,
+...     'Jaime' : 50,
+... }
+>>> my_dic['David'] 
+35  
+>>> my_dic['Erik']
+Traceback (most recent call last):   
+  File "<stdin>", line 1, in <module>
+KeyError: 'Erik'
+>>> my_dic.get ('Juan', 30)
+30  
+>>> my_dic.get ('David', 30) 
+35  
+>>> my_dic.get ('David', 'no exist') 
+35
+>>> my_dic.get ('juan', 'no exist')  
+'no exist'
+>>> my_dic['Jaime'] = 20  
+>>> my_dic              
+{'David': 35, 'Erika': 32, 'Jaime': 20}
+>>> my_dic['Pedro']  = 7 
+>>> my_dic              
+{'David': 35, 'Erika': 32, 'Jaime': 20, 'Pedro': 7}
+>>>
+>>> 
+>>> del my_dic['Jaime']
+>>> my_dic
+{'David': 35, 'Erika': 32, 'Pedro': 7}
+>>>
+>>> 
+>>> for llave in my_dic.keys():
+...     print(llave)
+... 
+David
+Erika
+Pedro
+>>> for valor in my_dic.values(): 
+...     print(valor)
+... 
+35
+32
+7
+>>> for llave, valor in my_dic.items()
+  File "<stdin>", line 1
+    for llave, valor in my_dic.items()
+                                      ^
+SyntaxError: invalid syntax
+>>> for llave, valor in my_dic.items():
+...     rpint (llave,valor)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'rpint' is not defined
+>>> for llave, valor in my_dic.items():
+...     print (llave,valor)
+... 
+David 35
+Erika 32
+Pedro 7
+>>>
+>>> 'David' in my_dic
+True
+>>> 'Tom' in my_dic
+False
